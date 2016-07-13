@@ -225,16 +225,17 @@ public class Deck : MonoBehaviour {
 			
 			//Handle face cards
 			if (card.def.face != "") {
-				tGO = Instantiate(prefabSprite) as GameObject;
-				tSR = tGO.GetComponent<SpriteRenderer>();
-				
-				tS = GetFace(card.def.face+card.suit);
-				tSR.sprite = tS;
-				tSR.sortingOrder = 1;
-				tGO.transform.parent=card.transform;
-				tGO.transform.localPosition = Vector3.zero;  // slap it smack dab in the middle
-				tGO.name = "face";
 			}
+
+			tGO = Instantiate(prefabSprite) as GameObject;
+			tSR = tGO.GetComponent<SpriteRenderer>();
+			tSR.sprite = cardBack;
+			tSR.sortingOrder = 2;
+			tGO.transform.parent=card.transform;
+			tGO.transform.localPosition = Vector3.zero;  // slap it smack dab in the middle
+			tGO.name = "back";
+			card.back = tGO;
+			card.faceUp = true;
 			
 			cards.Add (card);
 		} // for all the Cardnames	
@@ -249,5 +250,17 @@ public class Deck : MonoBehaviour {
 		}//foreach	
 		return (null);  // couldn't find the sprite (should never reach this line)
 	 }// getFace 
-	
-} // Deck class
+
+	static public void Shuffle(ref List<Card> oCards){
+		List<Card> tCards = new List<Card>();
+
+		int ndx;
+		tCards = new List<Card>();
+		while(oCards.Count > 0){
+			ndx = Random.Range (0, oCards.Count);
+			tCards.Add (oCards[ndx]);
+			oCards.RemoveAt (ndx);
+		}
+		oCards = tCards;
+	}
+}
