@@ -75,57 +75,108 @@ NavMeshSettings:
     heightInaccuracy: 10
     tileSizeHint: 0
   m_NavMesh: {fileID: 0}
---- !u!1 &441166423
+--- !u!1 &24889893
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 441166425}
-  - 132: {fileID: 441166424}
+  - 4: {fileID: 24889895}
+  - 132: {fileID: 24889894}
   m_Layer: 0
-  m_Name: RoundResult
+  m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!132 &441166424
+--- !u!132 &24889894
 GUIText:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 441166423}
+  m_GameObject: {fileID: 24889893}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: You won with 10,000 points.
-  m_Anchor: 1
-  m_Alignment: 1
-  m_PixelOffset: {x: 0, y: -55}
+  m_Text: 'High Score:'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 4, y: -4}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 28
-  m_FontStyle: 0
+  m_FontSize: 16
+  m_FontStyle: 1
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
---- !u!4 &441166425
+--- !u!4 &24889895
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 441166423}
+  m_GameObject: {fileID: 24889893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .779999971, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+--- !u!1 &35521014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 35521016}
+  - 132: {fileID: 35521015}
+  m_Layer: 0
+  m_Name: GameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &35521015
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35521014}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Game Over
+  m_Anchor: 1
+  m_Alignment: 1
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 50
+  m_FontStyle: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &35521016
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35521014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .5, y: .949999988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &455143086
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,11 +259,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 455143086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -40}
+  m_LocalPosition: {x: 0, y: 0, z: -40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &455143092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,6 +355,8 @@ MonoBehaviour:
   scoreRun: 0
   score: 0
   fsRun: {fileID: 0}
+  GTGameOver: {fileID: 35521015}
+  GTRoundResult: {fileID: 2092485832}
 --- !u!114 &455143094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +365,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 455143086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a07dfbe68312545910509e0f2d8235, type: 3}
+  m_Script: {fileID: 11500000, guid: ad1ab767849824eebaaaed2e3a09a29e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xmlr:
@@ -346,68 +399,17 @@ MonoBehaviour:
   - Row3
   - Discard
   - Draw
---- !u!1 &653793751
+--- !u!1 &518549251
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 653793753}
-  - 132: {fileID: 653793752}
-  m_Layer: 0
-  m_Name: HighScore
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!132 &653793752
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 653793751}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: 'High Score:'
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 4, y: -4}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 16
-  m_FontStyle: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
---- !u!4 &653793753
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 653793751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .779999971, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
---- !u!1 &697828247
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 697828251}
-  - 33: {fileID: 697828250}
-  - 64: {fileID: 697828249}
-  - 23: {fileID: 697828248}
+  - 4: {fileID: 518549255}
+  - 33: {fileID: 518549254}
+  - 64: {fileID: 518549253}
+  - 23: {fileID: 518549252}
   m_Layer: 0
   m_Name: ProspectorBackground
   m_TagString: Untagged
@@ -415,12 +417,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &697828248
+--- !u!23 &518549252
 Renderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697828247}
+  m_GameObject: {fileID: 518549251}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -435,12 +437,12 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &697828249
+--- !u!64 &518549253
 MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697828247}
+  m_GameObject: {fileID: 518549251}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -448,35 +450,35 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &697828250
+--- !u!33 &518549254
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697828247}
+  m_GameObject: {fileID: 518549251}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &697828251
+--- !u!4 &518549255
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697828247}
+  m_GameObject: {fileID: 518549251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 26.6669998, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
---- !u!1 &963455131
+  m_RootOrder: 2
+--- !u!1 &1225608991
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 963455134}
-  - 132: {fileID: 963455133}
-  - 114: {fileID: 963455132}
+  - 4: {fileID: 1225608994}
+  - 132: {fileID: 1225608993}
+  - 114: {fileID: 1225608992}
   m_Layer: 0
   m_Name: _Scoreboard
   m_TagString: Untagged
@@ -484,27 +486,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &963455132
+--- !u!114 &1225608992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 963455131}
+  m_GameObject: {fileID: 1225608991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e3c6c8c60d2fc4bb421e2a9057f641, type: 3}
+  m_Script: {fileID: 11500000, guid: 5267750830c504e47ab9f113e72464f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabFloatingScore: {fileID: 182322, guid: e6a7dab7488f7594eae4c68138aa1cb3, type: 2}
-  ________________: 0
+  prefabFloatingScore: {fileID: 132362, guid: 7f35e9d96040d4d20b18fa6ec0cd794d, type: 2}
+  _________: 0
   _score: 0
   _scoreString: 
---- !u!132 &963455133
+--- !u!132 &1225608993
 GUIText:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 963455131}
+  m_GameObject: {fileID: 1225608991}
   m_Enabled: 1
   serializedVersion: 3
   m_Text: 0
@@ -522,66 +524,66 @@ GUIText:
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
---- !u!4 &963455134
+--- !u!4 &1225608994
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 963455131}
+  m_GameObject: {fileID: 1225608991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: .600000024, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
---- !u!1 &1591930653
+  m_RootOrder: 1
+--- !u!1 &2092485831
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1591930655}
-  - 132: {fileID: 1591930654}
+  - 4: {fileID: 2092485833}
+  - 132: {fileID: 2092485832}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: RoundResult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!132 &1591930654
+--- !u!132 &2092485832
 GUIText:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1591930653}
+  m_GameObject: {fileID: 2092485831}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Game Over
+  m_Text: You won 10,000 points.
   m_Anchor: 1
   m_Alignment: 1
-  m_PixelOffset: {x: 0, y: 0}
+  m_PixelOffset: {x: 0, y: -55}
   m_LineSpacing: 1
   m_TabSize: 4
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 50
-  m_FontStyle: 1
+  m_FontSize: 28
+  m_FontStyle: 0
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
---- !u!4 &1591930655
+--- !u!4 &2092485833
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1591930653}
+  m_GameObject: {fileID: 2092485831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .5, y: .949999988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
