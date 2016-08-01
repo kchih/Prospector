@@ -127,7 +127,7 @@ public class Prospector : MonoBehaviour {
 			cp.layoutID = tSD.id;
 			cp.slotDef = tSD;
 			cp.state = CardState.tableau;
-			cp.SetSortingLaynerName(tSD.layerName);
+			cp.SetSortingLayerName(tSD.layerName);
 			tableau.Add(cp);
 		}
 
@@ -178,7 +178,7 @@ public class Prospector : MonoBehaviour {
 		    layout.multiplier.y * layout.discardPile.y,
 			-layout.discardPile.layerID + .5f);
 		cd.faceUp = true;
-		cd.SetSortingLaynerName (layout.discardPile.layerName);
+		cd.SetSortingLayerName (layout.discardPile.layerName);
 		cd.SetSortOrder (-100 + discardPile.Count);
 	}
 
@@ -193,7 +193,7 @@ public class Prospector : MonoBehaviour {
 			layout.multiplier.y * layout.discardPile.y,
 			-layout.discardPile.layerID);
 		cd.faceUp = true;
-		cd.SetSortingLaynerName (layout.discardPile.layerName);
+		cd.SetSortingLayerName (layout.discardPile.layerName);
 		cd.SetSortOrder (0);
 	}
 
@@ -209,7 +209,7 @@ public class Prospector : MonoBehaviour {
 				-layout.drawPile.layerID + .1f * i);
 				cd.faceUp = false;
 				cd.state = CardState.drawpile;
-				cd.SetSortingLaynerName(layout.drawPile.layerName);
+				cd.SetSortingLayerName(layout.drawPile.layerName);
 				cd.SetSortOrder(-10 * i);
 		}
 	}

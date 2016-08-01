@@ -52,7 +52,7 @@ public class Card : MonoBehaviour {
 		}
 	}
 
-	public void SetSortingLaynerName(string tSLN){
+	public void SetSortingLayerName(string tSLN){
 		PopulateSpriteRenderers ();
 
 		foreach(SpriteRenderer tSR in spriteRenderers){
